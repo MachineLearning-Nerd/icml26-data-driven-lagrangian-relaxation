@@ -227,9 +227,9 @@ def main() -> None:
 
     bundle_paths = [
         ROOT / "repro/configs/live_claims.json",
-        ROOT / "upstream/arxiv-2605.19052.tar",
-        ROOT / "upstream/icml2026-arxiv.tex",
-        ROOT / "upstream/icml_appendix.tex",
+        ROOT / "source/arxiv-v2/arxiv-2605.19052.tar",
+        ROOT / "source/arxiv-v2/icml2026-arxiv.tex",
+        ROOT / "source/arxiv-v2/icml_appendix.tex",
         RAW,
         verdict_path,
         ROOT / "docs/research_log.md",

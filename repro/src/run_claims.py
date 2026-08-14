@@ -25,9 +25,9 @@ from repro.src.core import (
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE_PINS = {
-    "upstream/arxiv-2605.19052.tar": "c1dea639b1137784cf075b486f29c3b6accbfc34b7a2ba717eb0b02bd347231e",
-    "upstream/icml2026-arxiv.tex": "96252bc23d6416698a83d62ce7aeaffd5c9cec421fb97d548c8b4c08da5709e5",
-    "upstream/icml_appendix.tex": "5a9bc0ecd7eb90d53e14d9e05f786b52cc5abf216e10cfebd0bcd8fccd32ec22",
+    "source/arxiv-v2/arxiv-2605.19052.tar": "c1dea639b1137784cf075b486f29c3b6accbfc34b7a2ba717eb0b02bd347231e",
+    "source/arxiv-v2/icml2026-arxiv.tex": "96252bc23d6416698a83d62ce7aeaffd5c9cec421fb97d548c8b4c08da5709e5",
+    "source/arxiv-v2/icml_appendix.tex": "5a9bc0ecd7eb90d53e14d9e05f786b52cc5abf216e10cfebd0bcd8fccd32ec22",
 }
 
 
@@ -37,7 +37,7 @@ def source_audit() -> dict:
         path = ROOT / rel
         actual = hashlib.sha256(path.read_bytes()).hexdigest()
         rows.append({"path": rel, "bytes": path.stat().st_size, "sha256": actual, "expected": expected, "passed": actual == expected})
-    appendix = (ROOT / "upstream/icml_appendix.tex").read_text()
+    appendix = (ROOT / "source/arxiv-v2/icml_appendix.tex").read_text()
     malformed = "If $v_k = 0$: $\\bbP(c_k = 2) = \\frac{1 + \\epsilon}{2}$ and $\\bbP(c_k = 1) = \\frac{1 + \\epsilon}{2}$"
     return {
         "files": rows,

@@ -1,0 +1,106 @@
+{
+  "artifact_manifest": {
+    "files": 30,
+    "sha256": "b58e625bcdf6b3a4d6934621441b11617a119923d5a716e352f332a725820af1"
+  },
+  "arxiv": "2605.19052",
+  "claim_count": 6,
+  "claim_outcomes": [
+    "VERIFIED_SCOPED",
+    "VERIFIED_SCOPED",
+    "VERIFIED_SCOPED",
+    "VERIFIED_SCOPED_WITH_SOURCE_CORRECTION",
+    "VERIFIED_SCOPED",
+    "VERIFIED_SCOPED_WITH_CONVENTION_NOTE"
+  ],
+  "documentation_check_passed": true,
+  "evidence_bundle": {
+    "bytes": 3777299,
+    "records": 25,
+    "sha256": "adfc6ab3ee3073ecf1c8ae78749d10162ace3a07de9751b4a2c6ed52e5103b98"
+  },
+  "gate_version": "publication-v1",
+  "hygiene": {
+    "passed": true,
+    "scanned_text_files": 23,
+    "tracked_files": 19
+  },
+  "limitations": [
+    "C4 retains the literal Appendix Theorem 6.2 probability defect and verifies the complementary repair separately.",
+    "The pinned arXiv source contains no author executable implementation; numerical code here is clean-room.",
+    "No application-scale MILP benchmark or competition score is claimed.",
+    "No author endorsement is claimed."
+  ],
+  "overall_status": "VERIFIED_SCOPED_WITH_ONE_SOURCE_CORRECTION",
+  "paper": "OwLuqetJuB",
+  "possible_points": 12,
+  "publication_gate_passed": true,
+  "raw_evidence": {
+    "falsified_claims": 0,
+    "metrics": {
+      "erm_n_slope": -0.5056292231329745,
+      "independent_geometry": {
+        "max_control_failures": 1155,
+        "max_norm_ratio": 0.7034745386687321,
+        "min_concavity_margin": -1.7763568394002505e-15,
+        "min_supergradient_margin": -2.6645352591003757e-15,
+        "trials": 2500,
+        "wrong_gradient_failures": 1268
+      },
+      "max_sga_bound_ratio": 0.11422749804332853,
+      "max_warm_exact_relative_error": 0.020945720995465638,
+      "min_fano_error": 0.2737854175886105,
+      "packing_pairs": 32766,
+      "producer_geometry_trials": 3000,
+      "rademacher_normalized_constant": 5.662939536638803,
+      "sga_n_slope": -0.4978030069946626,
+      "source_pins": true,
+      "warm_n_slope": -1.0071673350203594
+    },
+    "verified_claims": 6
+  },
+  "score_forecast": null,
+  "source": {
+    "archive_members": 10,
+    "artifacts": {
+      "appendix_tex": {
+        "bytes": 32428,
+        "path": "source/arxiv-v2/icml_appendix.tex",
+        "sha256": "5a9bc0ecd7eb90d53e14d9e05f786b52cc5abf216e10cfebd0bcd8fccd32ec22"
+      },
+      "main_tex": {
+        "bytes": 59485,
+        "path": "source/arxiv-v2/icml2026-arxiv.tex",
+        "sha256": "96252bc23d6416698a83d62ce7aeaffd5c9cec421fb97d548c8b4c08da5709e5"
+      },
+      "pdf": {
+        "bytes": 479978,
+        "path": "docs/primary-v2.pdf",
+        "sha256": "6ebb06729fd814155c4a2b2dfd7b1d8a1ed5d0a7bd0d6330ec268b9796158716"
+      },
+      "source_archive": {
+        "bytes": 59684,
+        "path": "source/arxiv-v2/arxiv-2605.19052.tar",
+        "sha256": "c1dea639b1137784cf075b486f29c3b6accbfc34b7a2ba717eb0b02bd347231e"
+      }
+    },
+    "paper": {
+      "arxiv_id": "2605.19052",
+      "arxiv_url": "https://arxiv.org/abs/2605.19052",
+      "arxiv_version": "v2",
+      "authors": [
+        "Tung Quoc Le",
+        "Anh Tuan Nguyen",
+        "Viet Anh Nguyen"
+      ],
+      "challenge_label": "ICML 2026 reproduction corpus",
+      "openreview_id": "OwLuqetJuB",
+      "openreview_url": "https://openreview.net/forum?id=OwLuqetJuB",
+      "title": "Provably Data-driven Lagrangian Relaxation for Mixed Integer Linear Programming",
+      "venue": "ICML 2026"
+    }
+  },
+  "status": "SCOPED_PASS",
+  "strict_status": "NOT_READY",
+  "tests_passed": true
+}

@@ -14,7 +14,8 @@ from repro.src.core import (
     hard_dual,
     pairwise_hamming,
 )
-from repro.src.prepublish_gate import validate_bundle, validate_trackio
+from repro.src.publication_gate import validate_bundle
+from repro.src.build_bundle import selected_paths
 
 
 def test_hard_dual_matches_binary_enumeration():
@@ -85,7 +86,7 @@ def test_tight_gradient_bound_is_attained_by_a_finite_subproblem():
 def test_bundle_round_trip_and_payload_binding(tmp_path):
     root = Path(__file__).resolve().parents[2]
     info = validate_bundle(root / "outputs/evidence_bundle.jsonl", root)
-    assert info["records"] == 7
+    assert info["records"] == len(selected_paths())
     records = [json.loads(x) for x in (root / "outputs/evidence_bundle.jsonl").read_text().splitlines()]
     records[0]["payload"]["paper_id"] = "mutated"
     bad = tmp_path / "bad.jsonl"
@@ -98,11 +99,18 @@ def test_bundle_round_trip_and_payload_binding(tmp_path):
         raise AssertionError("tampered bundle payload was accepted")
 
 
-def test_trackio_registration_and_complete_pages():
+def test_publication_documents_are_present():
     root = Path(__file__).resolve().parents[2]
-    info = validate_trackio(root, (root / "outputs/evidence_bundle.jsonl").stat().st_size)
-    assert info["required_pages"] == 10
-    assert info["pinned_conclusion_cells"] == 1
+    for relative in [
+        "README.md",
+        "STATUS.md",
+        "sources.json",
+        "docs/CLAIM_EVIDENCE.md",
+        "docs/SOURCE_AUDIT.md",
+        "docs/BRANCH_AUDIT.md",
+        "docs/PUBLICATION_GATE.md",
+    ]:
+        assert (root / relative).is_file()
 
 
 def test_zero_step_sga_control_violates_large_n_bound():
@@ -122,8 +130,8 @@ def test_pinned_contract_has_six_distinct_claims():
 
 def test_primary_source_contains_literal_typo_and_theorem_anchors():
     root = Path(__file__).resolve().parents[2]
-    appendix = (root / "upstream/icml_appendix.tex").read_text()
-    main = (root / "upstream/icml2026-arxiv.tex").read_text()
+    appendix = (root / "source/arxiv-v2/icml_appendix.tex").read_text()
+    main = (root / "source/arxiv-v2/icml2026-arxiv.tex").read_text()
     assert "If $v_k = 0$: $\\bbP(c_k = 2) = \\frac{1 + \\epsilon}{2}$" in appendix
     for anchor in [
         "thm:upper-bound-learning-lagrangian", "thm:minimax-lower-bound",

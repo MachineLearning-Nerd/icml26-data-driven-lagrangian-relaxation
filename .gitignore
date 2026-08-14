@@ -2,5 +2,5 @@
 __pycache__/
 .pytest_cache/
 *.pyc
-.trackio/metadata.json
-.trackio/logbook/.sync*
+*.egg-info/
+.trackio/

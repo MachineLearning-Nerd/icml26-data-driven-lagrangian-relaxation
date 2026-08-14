@@ -42,12 +42,12 @@
   ],
   "live_claim_count": 6,
   "metrics": {
-    "erm_n_slope": -0.5056292231329746,
+    "erm_n_slope": -0.5056292231329745,
     "independent_geometry": {
       "max_control_failures": 1155,
       "max_norm_ratio": 0.7034745386687321,
       "min_concavity_margin": -1.7763568394002505e-15,
-      "min_supergradient_margin": -1.7763568394002505e-15,
+      "min_supergradient_margin": -2.6645352591003757e-15,
       "trials": 2500,
       "wrong_gradient_failures": 1268
     },
@@ -56,10 +56,10 @@
     "min_fano_error": 0.2737854175886105,
     "packing_pairs": 32766,
     "producer_geometry_trials": 3000,
-    "rademacher_normalized_constant": 5.662939536639223,
-    "sga_n_slope": -0.4978030069946627,
+    "rademacher_normalized_constant": 5.662939536638803,
+    "sga_n_slope": -0.4978030069946626,
     "source_pins": true,
-    "warm_n_slope": -1.0071673350203592
+    "warm_n_slope": -1.0071673350203594
   },
   "paper_id": "OwLuqetJuB",
   "possible_points": 12,

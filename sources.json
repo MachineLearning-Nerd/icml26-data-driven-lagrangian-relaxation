@@ -1,0 +1,58 @@
+{
+  "paper": {
+    "title": "Provably Data-driven Lagrangian Relaxation for Mixed Integer Linear Programming",
+    "authors": [
+      "Tung Quoc Le",
+      "Anh Tuan Nguyen",
+      "Viet Anh Nguyen"
+    ],
+    "arxiv_id": "2605.19052",
+    "arxiv_version": "v2",
+    "arxiv_url": "https://arxiv.org/abs/2605.19052",
+    "openreview_id": "OwLuqetJuB",
+    "openreview_url": "https://openreview.net/forum?id=OwLuqetJuB",
+    "venue": "ICML 2026",
+    "challenge_label": "ICML 2026 reproduction corpus"
+  },
+  "claim_contract": {
+    "local_path": "repro/configs/live_claims.json",
+    "local_sha256": "ad28e6d9fee99582c59350ca2094c2c5f0d734cfbe067bbdf9deecfd9c562815",
+    "source_url": "https://huggingface.co/spaces/ICML-2026-agent-repro/challenge/resolve/main/claims_anchored.json",
+    "claim_count": 6,
+    "possible_points": 12
+  },
+  "paper_artifacts": {
+    "pdf": {
+      "local_path": "docs/primary-v2.pdf",
+      "bytes": 479978,
+      "pages": 19,
+      "sha256": "6ebb06729fd814155c4a2b2dfd7b1d8a1ed5d0a7bd0d6330ec268b9796158716"
+    },
+    "source_archive": {
+      "local_path": "source/arxiv-v2/arxiv-2605.19052.tar",
+      "bytes": 59684,
+      "archive_members": 10,
+      "sha256": "c1dea639b1137784cf075b486f29c3b6accbfc34b7a2ba717eb0b02bd347231e"
+    },
+    "main_tex": {
+      "local_path": "source/arxiv-v2/icml2026-arxiv.tex",
+      "bytes": 59485,
+      "sha256": "96252bc23d6416698a83d62ce7aeaffd5c9cec421fb97d548c8b4c08da5709e5"
+    },
+    "appendix_tex": {
+      "local_path": "source/arxiv-v2/icml_appendix.tex",
+      "bytes": 32428,
+      "sha256": "5a9bc0ecd7eb90d53e14d9e05f786b52cc5abf216e10cfebd0bcd8fccd32ec22"
+    }
+  },
+  "source_correction": {
+    "location": "source/arxiv-v2/icml_appendix.tex",
+    "issue": "The literal Theorem 6.2 v_k=0 probabilities both use (1+epsilon)/2 and sum to 1+epsilon.",
+    "audit_treatment": "The malformed law is retained as a must-fail control; the complementary (1-epsilon)/2 and (1+epsilon)/2 law is tested separately."
+  },
+  "implementation_boundary": {
+    "official_executable_code": "not_found_in_the_pinned_arxiv_source_or_this_repository",
+    "method": "clean-room numerical reconstruction of the paper's explicit finite separable MILP family",
+    "external_empirical_pipeline": "not claimed; the paper's current claims are theory and finite-family checks"
+  }
+}

@@ -23,7 +23,7 @@
   "hygiene": {
     "passed": true,
     "scanned_text_files": 23,
-    "tracked_files": 19
+    "tracked_files": 35
   },
   "limitations": [
     "C4 retains the literal Appendix Theorem 6.2 probability defect and verifies the complementary repair separately.",
